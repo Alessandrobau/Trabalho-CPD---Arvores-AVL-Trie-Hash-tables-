@@ -23,21 +23,35 @@ class NoJogo:
         self.jogo = jogo
         self.esquerda = None
         self.direita = None
-class ArvoreJogos:
-    def __init__(self):
-        self.raiz = None
-    def inserir(self, jogo):
-        pass
-    # : Inserir jogo na BST com base no preço
-    def buscar_por_preco(self, preco):
-        pass
-    # : Buscar jogos por preço simple
-    def busca_por_faixa_preco(self, preco_minimo, preco_maximo):
-        pass
-    # : Recuperar jogos dentro de uma faixa de preço
 
 class MotorBuscaJogos:
     def __init__(self):
-        self.catalogo_jogos = ArvoreJogos()
+        pass
+        #self.catalogo_jogos = ArvoreJogos()
         # self.generos = HashGeneros()
     # ... Outros més para adicionar jogos, busca, etc
+    
+avltree = AVLtree()
+keys = [10, 40, 60, 20, 30, 100, 10, 20, 30, 6 , 12, 24, 45, 74, 70, 6, 80, 6, 102, 130, 250, 1000]
+for key in keys:
+    avltree.insertNode(key, "value")    
+    
+    
+print(""" 
+      
+      ##########PESQUISA DE JOGOS##########
+      1- ver jogos
+      2- fazer pesquisa por item
+      3- fazer pesquisa por range
+      """)
+userInput = int(input(" "))
+if(userInput == 1):
+    avltree.inOrder()
+    print()
+elif(userInput == 2):
+    price = int(input("insira o preço: "))
+    print(avltree.searchForItem(price))
+elif(userInput == 3):
+    rangeDown = int(input("insira o preço mínimo: "))
+    rangeUp = int(input("insira o preço máximo: "))
+    print(avltree.searchRange(rangeDown, rangeUp))

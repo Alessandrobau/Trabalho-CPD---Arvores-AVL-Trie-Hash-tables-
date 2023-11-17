@@ -224,10 +224,10 @@ class AVLtree:
                     self.printTree(node.right, level + 1, "R--- ")
 
 
-avltree = AVLtree()
-keys = [10, 40, 60, 20, 30, 100, 10, 20, 30, 6 , 12, 24, 45, 74, 70, 6, 80, 6, 102]
-for key in keys:
-    avltree.insertNode(key, "value")
+# avltree = AVLtree()
+# keys = [10, 40, 60, 20, 30, 100, 10, 20, 30, 6 , 12, 24, 45, 74, 70, 6, 80, 6, 102, 130, 250, 1000]
+# for key in keys:
+#     avltree.insertNode(key, "value")
 
 # print("arvore inicial ")
 # avltree.inOrder()
@@ -240,4 +240,4 @@ for key in keys:
 # avltree.inOrder()
 # print()
 #avltree.printTree(avltree.base)
-print(avltree.searchRange(2, 70))
+#print(avltree.searchRange(2, 70))
