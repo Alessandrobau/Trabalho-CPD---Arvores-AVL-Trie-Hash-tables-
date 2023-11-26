@@ -196,9 +196,10 @@ class AVLtree:
 
     def searchRangeTraversal(self, node, min, max):
         if node:
-            if min <= node.key:
+            if min <= node.key: 
                 newList = self.searchRangeTraversal(node.left, min, max) or []
-                newList.extend(node.valuesList)
+                if node.key <= max:
+                    newList.extend(node.valuesList)
                 self.addToList(node.right, max, newList)
                 return newList
             elif min >= node.key:
