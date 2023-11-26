@@ -1,4 +1,5 @@
 from arvoreAVL import *
+from arvoreTRIE import *
 import random
 BUCKET_SIZE = 666
 
@@ -66,16 +67,19 @@ def gerar_jogos(num_jogos):
 
 def Print_List(xs):
     return '\n'.join(str(x) for x in xs)
-        
+
+hashes_por_genero = HashGeneros()     
 avltree = AVLtree()
+trietree = TrieTree()
 keys = [] 
-hashes_por_genero = HashGeneros()
+
 
 num_jogos = int(input("quantos jogos terão na lista? "))
 jogos_aleatorios = gerar_jogos(num_jogos)
 
 for jogo_id, jogo in jogos_aleatorios.items():
     avltree.insertNode(jogo.preco, jogo)
+    trietree.insert(jogo.titulo, jogo)
     for item in jogo.generos:
         hashes_por_genero.adicionar_jogo(item, jogo)
     print(jogo)
@@ -103,7 +107,8 @@ while(userInput < 6):
         generoInput = input("insira o gênero: ")
         print(Print_List(hashes_por_genero.obter_jogos(generoInput)))
     elif(userInput == 4):
-        print("nao implementado")
+        nomeInput = input("nome que deseja pesquisar: ")
+        print(Print_List(trietree.words_from_prefix(nomeInput)))
     elif(userInput == 5):
         avltree.printTree(avltree.base)
     else:
