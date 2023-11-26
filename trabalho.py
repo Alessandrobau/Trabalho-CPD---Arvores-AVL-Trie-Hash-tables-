@@ -306,7 +306,6 @@ while(userInput < 6):
         3- fazer pesquisa por categoria
         4- fazer pesquisa por nome
         5- printar arvore
-        6- cancelar
         """)
     userInput = int(input(" "))
     if(userInput == 1):
