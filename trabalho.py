@@ -43,7 +43,6 @@ class Jogo:
         self.generos = generos 
 
     def __str__(jogo):
-       # return f"Jogo ID: {jogo.jogo_id}, Preço: {jogo.preco}"
         return f"Jogo ID: {jogo.jogo_id}, Título: {jogo.titulo}, Desenvolvedor: {jogo.desenvolvedor}, Preço: {jogo.preco}, Gêneros: {jogo.generos}"
 
 class NoJogo:

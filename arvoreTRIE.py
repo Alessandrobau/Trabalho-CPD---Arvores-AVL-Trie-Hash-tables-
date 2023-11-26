@@ -12,8 +12,8 @@ class TrieTree:
 
     def insert(self, word, jogo):
         node = self.root
-
-        for char in word:
+        word_upperCase = word.upper()
+        for char in word_upperCase:
             if char in node.children:
                 node = node.children[char]
             else:
@@ -35,8 +35,8 @@ class TrieTree:
 
     def words_from_prefix(self, x):
         node = self.root
-
-        for char in x:
+        word_upperCase = x.upper()
+        for char in word_upperCase:
             if char in node.children:
                 node = node.children[char]
             else:
